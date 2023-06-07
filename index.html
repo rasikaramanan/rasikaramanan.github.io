@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Form</title>
+</head>
+<body>
+  <h1>User Input Form</h1>
+  <form id="myForm">
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" name="input1" required>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const input1Value = document.getElementById("input1").value;
+
+      //const url = `https://api.example.com/endpoint?input1=${input1Value}`;
+
+      try {
+        //const response = await fetch(url);
+        //const data = await response.json();
+        //resultDiv.innerText = JSON.stringify(data);
+        resultDiv.innterText = "hello world!"
+      } catch (error) {
+        resultDiv.innerText = "Error occurred while fetching data.";
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
